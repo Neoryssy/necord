@@ -1,7 +1,7 @@
 import { NecordBaseDiscovery } from '../context';
 
 export interface ListenerMeta {
-	target: 'client' | 'ws',
+	target: 'client' | 'ws';
 	type: 'once' | 'on';
 	event: string | symbol | number;
 }

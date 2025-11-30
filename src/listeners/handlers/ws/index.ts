@@ -1,3 +1,3 @@
-import { GatewayDispatchEvents } from "discord.js";
+import { GatewayDispatchEvents } from 'discord.js';
 
-export type NecordWsEvents = GatewayDispatchEvents
+export type NecordWsEvents = GatewayDispatchEvents;
