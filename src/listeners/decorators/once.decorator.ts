@@ -14,7 +14,7 @@ export function Once<E = NecordEvents>(event: keyof NoInfer<E>): ReturnType<type
  */
 export function Once<K extends keyof E, E = NecordEvents>(event: K): ReturnType<typeof Listener>;
 export function Once(event: keyof NecordEvents) {
-	return Listener({ type: 'once', event });
+	return Listener({ target: 'client', type: 'once', event });
 }
 
 /**

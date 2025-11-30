@@ -60,6 +60,7 @@ describe('ListenersModule', () => {
 
 	describe('should handle events', () => {
 		const listenerDiscovery = new ListenerDiscovery({
+			target: 'client',
 			event: 'ready',
 			type: 'once'
 		});

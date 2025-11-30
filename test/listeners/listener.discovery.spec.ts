@@ -2,7 +2,7 @@ import { ListenerDiscovery, ListenerMeta } from '../../src';
 
 describe('ListenerDiscovery', () => {
 	let discovery: ListenerDiscovery;
-	const testMeta: ListenerMeta = { type: 'on', event: 'messageCreate' };
+	const testMeta: ListenerMeta = { target: 'client', type: 'on', event: 'messageCreate' };
 
 	beforeEach(() => {
 		discovery = new ListenerDiscovery(testMeta);

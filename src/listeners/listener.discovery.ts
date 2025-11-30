@@ -1,6 +1,7 @@
 import { NecordBaseDiscovery } from '../context';
 
 export interface ListenerMeta {
+	target: 'client' | 'ws',
 	type: 'once' | 'on';
 	event: string | symbol | number;
 }
@@ -9,6 +10,10 @@ export interface ListenerMeta {
  * Represents a listener discovery.
  */
 export class ListenerDiscovery extends NecordBaseDiscovery<ListenerMeta> {
+	public getTarget() {
+		return this.meta.target;
+	}
+
 	public getType() {
 		return this.meta.type;
 	}

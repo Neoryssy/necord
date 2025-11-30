@@ -2,7 +2,7 @@ import { Listener, ListenerDiscovery } from '../../../src';
 
 describe('@Listener', () => {
 	class TestListener {
-		@Listener({ event: 'testEvent', type: 'on' })
+		@Listener({ target: 'client', event: 'testEvent', type: 'on' })
 		handleTestEvent() {
 			// handle the event
 		}

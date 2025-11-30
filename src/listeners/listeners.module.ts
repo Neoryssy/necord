@@ -23,13 +23,18 @@ export class ListenersModule implements OnModuleInit, OnApplicationBootstrap {
 	) {}
 
 	public onModuleInit() {
-		return this.explorerService
-			.explore(Listener.KEY)
-			.forEach(listener =>
+		return this.explorerService.explore(Listener.KEY).forEach(listener => {
+			if (listener.getTarget() === 'client')
 				this.client[listener.getType()](listener.getEvent(), (...args) =>
 					listener.execute(args)
-				)
-			);
+				);
+			else {
+				this.client[listener.getTarget()][listener.getType()](
+					listener.getEvent(),
+					(...args) => listener.execute(args)
+				);
+			}
+		});
 	}
 
 	public onApplicationBootstrap(): any {
